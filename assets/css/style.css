@@ -1,0 +1,12 @@
+.container-fluid {
+    background-color: red;
+    padding-bottom: 50px;
+}
+
+.jumbotron {
+    padding-bottom: 50px;
+}
+
+h1 {
+    font-size: 50px;
+}
