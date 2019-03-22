@@ -1,0 +1,94 @@
+/* Background-image for container.
+Added "no-repeat" to prevent duplicate images */
+.container-fluid {
+    background-image: url("../images/vinyl.jpg");
+    background-repeat: no-repeat;
+}
+
+/* Added "fluid" to stretch the header 
+across the width of browser */
+.container-fluid {
+    background-color: black;
+    padding-bottom: 50px;
+}
+
+/* Shows the title of the page.
+Added fade properties to blend jumbotron to bg-image */
+.jumbotron {
+    padding-bottom: 50px;
+    background: rgb(0,0,0);
+    background: rgba(0, 0, 0, 0);
+    color: #f1f1f1;
+}
+/* Font-size for the title */
+h1 {
+    font-size: 50px;
+}
+
+/* Search bar to search for artist(s) */
+input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    background: rgb(0,0,0);
+    background: rgba(0, 0, 0, 0);
+}
+
+/* Controls how far the search bar will expand */
+input[type=text]:focus {
+    width: 35%;
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Columns that will divide the artist searched,
+  related artist, ticket, and venue  */
+  .column-1 {
+    background-color: #aaa;
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px;
+  }
+
+  .column-2 {
+    background-color: rgb(214, 209, 209);
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px;
+  } 
+
+  .column-3 {
+    background-color: rgb(214, 209, 209);
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px;
+  } 
+
+  .column-4 {
+    background-color: #aaa;
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px;
+  } 
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
