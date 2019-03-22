@@ -1,24 +1,31 @@
+/* Background-image for container.
+Added "no-repeat" to prevent duplicate images */
 .container-fluid {
     background-image: url("../images/vinyl.jpg");
     background-repeat: no-repeat;
 }
 
+/* Added "fluid" to stretch the header 
+across the width of browser */
 .container-fluid {
-    background-color: red;
+    background-color: black;
     padding-bottom: 50px;
 }
 
+/* Shows the title of the page.
+Added fade properties to blend jumbotron to bg-image */
 .jumbotron {
     padding-bottom: 50px;
     background: rgb(0,0,0);
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0);
     color: #f1f1f1;
 }
-
+/* Font-size for the title */
 h1 {
     font-size: 50px;
 }
 
+/* Search bar to search for artist(s) */
 input[type=text] {
     width: 130px;
     box-sizing: border-box;
@@ -33,7 +40,8 @@ input[type=text] {
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 }
-  
+
+/* Controls how far the search bar will expand */
 input[type=text]:focus {
     width: 35%;
 }
