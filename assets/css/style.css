@@ -53,12 +53,21 @@ input[type=text]:focus {
   }
   
   /* Create two equal columns that floats next to each other */
-  .column {
+  .column-1 {
+    background-color: #aaa;
     float: left;
     width: 50%;
     padding: 10px;
     height: 300px; /* Should be removed. Only for demonstration */
   }
+
+  .column-2 {
+    background-color: rgb(214, 209, 209);
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  } 
   
   /* Clear floats after the columns */
   .row:after {
