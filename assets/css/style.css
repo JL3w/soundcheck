@@ -52,13 +52,14 @@ input[type=text]:focus {
     box-sizing: border-box;
   }
   
-  /* Create two equal columns that floats next to each other */
+  /* Columns that will divide the artist searched,
+  related artist, ticket, and venue  */
   .column-1 {
     background-color: #aaa;
     float: left;
     width: 50%;
     padding: 10px;
-    height: 300px; /* Should be removed. Only for demonstration */
+    height: 300px;
   }
 
   .column-2 {
@@ -66,7 +67,23 @@ input[type=text]:focus {
     float: left;
     width: 50%;
     padding: 10px;
-    height: 300px; /* Should be removed. Only for demonstration */
+    height: 300px;
+  } 
+
+  .column-3 {
+    background-color: rgb(214, 209, 209);
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px;
+  } 
+
+  .column-4 {
+    background-color: #aaa;
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px;
   } 
   
   /* Clear floats after the columns */
