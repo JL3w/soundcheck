@@ -1,4 +1,5 @@
 // //initialize firebase
+// //initialize firebase
 var config = {
   apiKey: "AIzaSyCEg-Upy0iRu7zlio1PYG5XcO1n_ZytUWE",
   authDomain: "soundcheck-d819a.firebaseapp.com",
@@ -14,6 +15,9 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 
+//event to grab the input from search bar and clear (needs to change if we dont use a button)
+
+//call last.fm API
 $("#submit").on("click", function(event) {
   event.preventDefault();
   var artist = $("#input-form").val().trim();
