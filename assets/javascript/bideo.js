@@ -50,5 +50,5 @@ var setVideoDimensions = function () {
   video.style.height = newHeight + 'px';
 };
  
-video.addEventListener('loadedmetadata', setVideoDimensions, false);
+//video.addEventListener('loadedmetadata', setVideoDimensions, false);
 window.addEventListener('resize', setVideoDimensions, false);
