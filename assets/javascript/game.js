@@ -52,7 +52,7 @@ $("#submit").on("click", function(event) {
 
   
 
-      $("#related").append(artDiv);
+      $("#related").prepend(artDiv);
     };
     
     
@@ -67,17 +67,17 @@ displayrelart();
   //set response variables
 
 //upload data to database
-database.ref().push(//input var name//);
+// database.ref().push(input var name);
 
 //firebase event to add data to database & upload html
-database.ref().on("child_added", function(childSnapshot) {
-    console.log(childSnapshot.val());
+// database.ref().on("child_added", function(childSnapshot) {
+//    console.log(childSnapshot.val());
 
     //Store data in variables
-    var //var name = childSnapshot.val().;
+//    var //var name = childSnapshot.val().;
 
     //update html
-})
+//})
 
 
 
