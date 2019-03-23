@@ -1,22 +1,37 @@
 /* Background-image for container.
 Added "no-repeat" to prevent duplicate images */
+<<<<<<< HEAD
 /* .container-fluid {
     background-image: url("../images/vinyl.jpg");
     background-repeat: no-repeat;
 } */
+=======
+.container-fluid {
+    background-image: url("../images/vinyl.jpg");
+    background-repeat: no-repeat;
+}
+>>>>>>> origin/master
 
 /* Added "fluid" to stretch the header 
 across the width of browser */
 .container-fluid {
     background-color: black;
+<<<<<<< HEAD
     padding: 0;
     margin: 0;
+=======
+    padding-bottom: 50px;
+>>>>>>> origin/master
 }
 
 /* Shows the title of the page.
 Added fade properties to blend jumbotron to bg-image */
 .jumbotron {
+<<<<<<< HEAD
     padding: 0;
+=======
+    padding-bottom: 50px;
+>>>>>>> origin/master
     background: rgb(0,0,0);
     background: rgba(0, 0, 0, 0);
     color: #f1f1f1;
@@ -92,6 +107,7 @@ input[type=text]:focus {
     content: "";
     display: table;
     clear: both;
+<<<<<<< HEAD
   }
 
 #vid-container {
@@ -131,3 +147,6 @@ form {
   margin-top: 10%;
 }
 
+=======
+  }
+>>>>>>> origin/master
