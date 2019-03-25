@@ -51,4 +51,4 @@ var setVideoDimensions = function () {
 };
  
 //video.addEventListener('loadedmetadata', setVideoDimensions, false);
-window.addEventListener('resize', setVideoDimensions, false);
+window.addEventListener('resize', setVideoDimensions, false);""
