@@ -1,15 +1,16 @@
 /* Background-image for container.
 Added "no-repeat" to prevent duplicate images */
-.container-fluid {
+/* .container-fluid {
     background-image: url("../images/vinyl.jpg");
     background-repeat: no-repeat;
-}
+} */
 
 /* Added "fluid" to stretch the header 
 across the width of browser */
 .container-fluid {
     background-color: black;
     padding-bottom: 50px;
+    z-index: 1;
 }
 
 /* Shows the title of the page.
@@ -19,6 +20,12 @@ Added fade properties to blend jumbotron to bg-image */
     background: rgb(0,0,0);
     background: rgba(0, 0, 0, 0);
     color: #f1f1f1;
+}
+/*  removes the submit button from the page by making it transparent*/
+#submit {
+  background: transparent;
+  border: none;
+  z-index: -1;
 }
 /* Font-size for the title */
 h1 {
@@ -112,6 +119,7 @@ video {
   position: absolute;
   top: 0; right: 0; left: 0; bottom: 0;
   padding-top: 50px;
+  z-index: 1;
   
   background: rgba(0,0,0,0.5);
 }
