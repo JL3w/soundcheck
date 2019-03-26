@@ -45,6 +45,12 @@ $("#submit").on("click", function(event) {
       nameDiv.attr("data-name", data[i].name);
       nameDiv.addClass("artists");
       artDiv.append(nameDiv);
+
+      var plusSpan = $("<span>")
+      plusSpan.attr("data-name", data[i].name);
+      plusSpan.addClass("fas fa-plus");
+      artDiv.append(plusSpan);
+      console.log
       
      // var link = $("<a>").text("Link").attr("href", artlink);
      // artDiv.append(link);
