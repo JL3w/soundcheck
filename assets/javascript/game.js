@@ -1,18 +1,18 @@
 // //initialize firebase
 var config = {
-  apiKey: "AIzaSyBu8rTbNifHBZ0s0KA_5o7HDfIJTQ1pE7o",
-  authDomain: "soundcheck-3312a.firebaseapp.com",
-  databaseURL: "https://soundcheck-3312a.firebaseio.com",
-  projectId: "soundcheck-3312a",
-  storageBucket: "soundcheck-3312a.appspot.com",
-  messagingSenderId: "402339358373"
+  apiKey: "AIzaSyBlnKmbd7woLS7CoS_c6qXMsoG5rJm19Ds",
+  authDomain: "group-project1-d7863.firebaseapp.com",
+  databaseURL: "https://group-project1-d7863.firebaseio.com",
+  projectId: "group-project1-d7863",
+  storageBucket: "group-project1-d7863.appspot.com",
+  messagingSenderId: "514017923014"
 };
-
 firebase.initializeApp(config);
 
 //set global variables
 var database = firebase.database();
 
+var artist = "";
 var relatedArtists = [];
 //event to grab the input from search bar and clear (needs to change if we dont use a button)
 
@@ -20,6 +20,11 @@ var relatedArtists = [];
 $("#submit").on("click", function(event) {
   event.preventDefault();
   var artist = $("#input-form").val().trim();
+
+  // code for pushing the searched artist to firebase
+  database.ref().push({
+    artist: artist,
+  });
   function displayrelart() {
 
   var queryURL = "https://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&artist=" + artist + "&limit=10&api_key=424ba3add1c40d8f176064e658978ecb&format=json";
