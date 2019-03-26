@@ -33,18 +33,23 @@ $("#submit").on("click", function(event) {
     for (i =0; i < data.length; i++) {
       console.log(data[i].name);
       console.log(data[i].url);
-      console.log(data[i].image[2]);
+      console.log(data[i].image[1]);
       var artname = data[i].name;
       relatedArtists.push(data[i].name)
       var artlink = data[i].url;
-      var artimag = data[i].image[2];
+      var artimag = data[i].image[1];
      
 
       var artDiv = $("<div class = 'relart'>");
       var nameDiv = $("<button>").text(artname);
+      var favDiv = $("<button>").text("+Fav")
+      favDiv.attr("data-name", data[i].name);
+      favDiv.addClass("favartists");
       nameDiv.attr("data-name", data[i].name);
       nameDiv.addClass("artists");
       artDiv.append(nameDiv);
+      artDiv.append(favDiv);
+
       
      // var link = $("<a>").text("Link").attr("href", artlink);
      // artDiv.append(link);
@@ -54,11 +59,23 @@ $("#submit").on("click", function(event) {
     
    
   });
-  
-};
-displayrelart();
-});
 
+
+  };
+  displayrelart();
+  });
+
+$(document).on("click", ".favartists", function(event) {
+
+  event.preventDefault();
+  var artist3 = $(this).attr("data-name");
+  var favDiv = $("<div class = 'favart'>");
+  var favnameDiv = $("<p>").text(artist3);
+  favnameDiv.attr("data-name", artist3);
+  favnameDiv.addClass("favartists");
+  favDiv.append(favnameDiv);
+  $("#fav").prepend(favDiv);
+});
 
 $(document).on("click", ".artists", function(event) {
   event.preventDefault();
@@ -69,15 +86,17 @@ $(document).on("click", ".artists", function(event) {
     method: "GET"
   }).then(function(response) {
     console.log(response);
-    var artistName = $("<h1>").text(response.name);
+    var artistName = $("<h2>").text(response.name);
     var artistURL = $("<a>").attr("href", response.url).append(artistName);
     var artistImage = $("<img>").attr("src", response.thumb_url);
     var trackerCount = $("<h2>").text(response.tracker_count + " fans tracking this artist");
-    var upcomingEvents = $("<h2>").text(response.upcoming_event_count + " upcoming events");
+    var upcomingEvents = $("<h1>").text(response.upcoming_event_count + " upcoming events");
     var goToArtist = $("<a>").attr("href", response.url).text("See Tour Dates");
 
     $("#bit-div").empty();
-    $("#bit-div").append(artistURL, artistImage, trackerCount, upcomingEvents, goToArtist);
+    $("#bit-div2").empty();
+    $("#bit-div").append(artistURL, artistImage, trackerCount);
+    $("#bit-div2").append(upcomingEvents, goToArtist);
   });
 });
 
