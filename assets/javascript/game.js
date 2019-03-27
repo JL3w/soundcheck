@@ -25,6 +25,7 @@ $("#submit").on("click", function(event) {
   database.ref().push({
     artist: artist,
   });
+  // function to show the related artist in collumn one
   function displayrelart() {
 
   var queryURL = "https://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&artist=" + artist + "&limit=10&api_key=424ba3add1c40d8f176064e658978ecb&format=json";
@@ -44,13 +45,17 @@ $("#submit").on("click", function(event) {
       var artlink = data[i].url;
       var artimag = data[i].image[2];
      
-
       var artDiv = $("<div class = 'relart'>");
       var nameDiv = $("<button>").text(artname);
       nameDiv.attr("data-name", data[i].name);
       nameDiv.addClass("artists");
       artDiv.append(nameDiv);
-      
+
+      // 55-57 adds a plus sign button to the right of the related artists
+      var plusSpan = $("<span>")
+      plusSpan.attr("data-name", data[i].name);
+      plusSpan.addClass("fas fa-plus");
+      artDiv.append(plusSpan);
      // var link = $("<a>").text("Link").attr("href", artlink);
      // artDiv.append(link);
       $("#related").prepend(artDiv);
