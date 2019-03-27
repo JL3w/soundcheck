@@ -10,6 +10,7 @@ across the width of browser */
 Added fade properties to blend jumbotron to bg-image */
 .jumbotron {
     padding-bottom: 50px;
+    padding-top: 30px;
     background: rgb(0,0,0);
     background: rgba(0, 0, 0, 0);
     color: #f1f1f1;
