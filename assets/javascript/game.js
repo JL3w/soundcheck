@@ -13,7 +13,6 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 var artist = "";
-var relatedArtists = [];
 //event to grab the input from search bar and clear (needs to change if we dont use a button)
 
 //call last.fm API
@@ -21,10 +20,6 @@ $("#submit").on("click", function(event) {
   event.preventDefault();
   var artist = $("#input-form").val().trim();
 
-  // code for pushing the searched artist to firebase
-  database.ref().push({
-    artist: artist,
-  });
   // function to show the related artist in collumn one
   function displayrelart() {
 
@@ -56,6 +51,14 @@ $("#submit").on("click", function(event) {
       plusSpan.attr("data-name", data[i].name);
       plusSpan.addClass("fas fa-plus");
       artDiv.append(plusSpan);
+      // creates fav artosts var
+      var favArtists = {
+        favArtists: data-name
+      };
+       // code for pushing the searched artist to firebase
+      database.ref().push({
+        favArtists: favArtists,
+      });
      // var link = $("<a>").text("Link").attr("href", artlink);
      // artDiv.append(link);
       $("#related").prepend(artDiv);
