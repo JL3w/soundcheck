@@ -42,14 +42,16 @@ $("#submit").on("click", function(event) {
 
       var artDiv = $("<div class = 'relart'>");
       var nameDiv = $("<button>").text(artname);
-      var favDiv = $("<button>").text("+Fav")
-      favDiv.attr("data-name", data[i].name);
-      favDiv.addClass("favartists");
+      var plusSpan = $("<span>").text("Fav")
+      plusSpan.attr("data-name", data[i].name);
+      plusSpan.addClass("fas fa-plus");
+      plusSpan.addClass("favartist");
       nameDiv.attr("data-name", data[i].name);
       nameDiv.addClass("artists");
       artDiv.append(nameDiv);
-      artDiv.append(favDiv);
+      artDiv.append(plusSpan);
 
+    
       
      // var link = $("<a>").text("Link").attr("href", artlink);
      // artDiv.append(link);
@@ -67,7 +69,7 @@ $("#submit").on("click", function(event) {
   });
 var favartistarray = [];
 
-$(document).on("click", ".favartists", function(event) {
+$(document).on("click", ".favartist", function(event) {
 
   event.preventDefault();
   var artist3 = $(this).attr("data-name");
