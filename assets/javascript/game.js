@@ -53,7 +53,7 @@ $("#submit").on("click", function(event) {
       
      // var link = $("<a>").text("Link").attr("href", artlink);
      // artDiv.append(link);
-      $("#1").prepend(artDiv);
+      $("#a").prepend(artDiv);
     };
     
     
@@ -80,7 +80,7 @@ $(document).on("click", ".favartists", function(event) {
   favnameDiv.attr("data-name", artist3);
   favnameDiv.addClass("favartists");
   favDiv.append(favnameDiv);
-  $("#4").prepend(favDiv);
+  $("#b2").prepend(favDiv);
 });
 
 $(document).on("click", ".artists", function(event) {
@@ -99,9 +99,9 @@ $(document).on("click", ".artists", function(event) {
     var upcomingEvents = $("<h2>").text(response.upcoming_event_count + " upcoming events");
     var goToArtist = $("<a>").attr("href", response.url).text("See Tour Dates");
 
-    $("#2").empty();
-    $("#4").empty();
-    $("#2").append(artistURL, artistImage, trackerCount, upcomingEvents, goToArtist);
+    $("#b1").empty();
+   // $("#").empty();
+    $("#b1").append(artistURL, artistImage, trackerCount, upcomingEvents, goToArtist);
    
   });
 });
