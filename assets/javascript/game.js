@@ -37,29 +37,57 @@ $("#submit").on("click", function(event) {
       var artname = data[i].name;
       relatedArtists.push(data[i].name)
       var artlink = data[i].url;
-      var artimag = data[i].image[1];
+      var artimag = Object.values(data[i].image[1]);
      
-
       var artDiv = $("<div class = 'relart'>");
-      var nameDiv = $("<button>").text(artname);
+      var imgDiv = $('<img>');
+      imgDiv.attr('src', artimag);
+      artDiv.append(imgDiv);
+      var infoDiv = $("<div class = 'art-info'>");
+      var nameDiv = $('<h4>').text(artname);
+      var moreDiv = $("<button>").text("Learn More");
       var plusSpan = $("<span>").text("Fav")
       plusSpan.attr("data-name", data[i].name);
       plusSpan.addClass("fas fa-plus");
       plusSpan.addClass("favartist");
-      nameDiv.attr("data-name", data[i].name);
-      nameDiv.addClass("artists");
-      artDiv.append(nameDiv);
-      artDiv.append(plusSpan);
+      moreDiv.attr("data-name", data[i].name);
+      moreDiv.addClass("artists");
+      infoDiv.append(nameDiv);
+      infoDiv.append(moreDiv);
+      infoDiv.append(plusSpan);
 
-    
-      
+      var artBox = $("<div class = 'art-box'>");
+      artBox.append(artDiv);
+      artBox.append(infoDiv);
+
      // var link = $("<a>").text("Link").attr("href", artlink);
      // artDiv.append(link);
-      $("#a").prepend(artDiv);
+      $("#a").append(artBox);
     };
+
+    var controller = new ScrollMagic.Controller({
+      container: "#a"
+      });
+      
+      $('.art-box').each(function () {
+      var tween = TweenMax.from($(this), 0.3, {
+        autoAlpha: 0,
+        scale: 0.5,
+        y: '+=30'
+      });
+      
+      var scene = new ScrollMagic.Scene({
+          triggerElement: this,
+          duration: '90%',
+          triggerHook: 0.8
+        })
+        .setTween(tween)
+        .addIndicators({
+          parent: "#a"
+        })
+        .addTo(controller);
+      });
     
-    
-   
   });
 
 
