@@ -13,6 +13,7 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 var artist = "";
+var relatedArtists = [];
 //event to grab the input from search bar and clear (needs to change if we dont use a button)
 
 //call last.fm API
@@ -51,10 +52,11 @@ $("#submit").on("click", function(event) {
       plusSpan.attr("data-name", data[i].name);
       plusSpan.addClass("fas fa-plus");
       artDiv.append(plusSpan);
-      // creates fav artosts var
-      var favArtists = {
-        favArtists: data-name
-      };
+    
+        // creates fav artists var
+        var favArtists = {
+          favArtists: data-name
+        };
        // code for pushing the searched artist to firebase
       database.ref().push({
         favArtists: favArtists,
