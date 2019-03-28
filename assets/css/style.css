@@ -1,137 +1,137 @@
 /* Added "fluid" to stretch the header 
 across the width of browser */
 .container-fluid {
-    background-color: black;
-    padding-bottom: 50px;
-    z-index: 1;
+  background-color: black;
+  padding-bottom: 50px;
+  z-index: 1;
 }
 
 /* Shows the title of the page.
 Added fade properties to blend jumbotron to bg-image */
 .jumbotron {
-    padding-bottom: 50px;
-    padding-top: 30px;
-    background: rgb(0,0,0);
-    background: rgba(0, 0, 0, 0);
-    color: #f1f1f1;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  background: rgb(0,0,0);
+  background: rgba(0, 0, 0, 0);
+  color: #f1f1f1;
 }
 /*  removes the submit button from the page by making it transparent*/
 #submit {
-  background: transparent;
-  border: none;
-  z-index: -1;
+background: transparent;
+border: none;
+z-index: -1;
 }
 /* Font-size for the title */
 h1 {
-    font-size: 50px;
+  font-size: 50px;
 }
 
 /* Search bar to search for artist(s) */
 input[type=text] {
-    width: 130px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    color: white;
-    background-image: url('searchicon.png');
-    background-position: 10px 10px; 
-    background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-    background: rgb(0,0,0);
-    background: rgba(0, 0, 0, 0);
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  color: white;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  background: rgb(0,0,0);
+  background: rgba(0, 0, 0, 0);
 }
 
 /* Controls how far the search bar will expand */
 input[type=text]:focus {
-    width: 35%;
+  width: 25%;
 }
 
 * {
-    box-sizing: border-box;
-  }
-  
-  /* Columns that will divide the artist searched,
-  related artist, ticket, and venue  */
-  .column-1 {
-    background-color: #aaa;
-    float: left;
-    width: 50%;
-    padding: 10px;
-    height: 300px;
-  }
+  box-sizing: border-box;
+}
 
-  .column-2 {
-    background-color: rgb(214, 209, 209);
-    float: left;
-    width: 50%;
-    padding: 10px;
-    height: 300px;
-  } 
+/* Columns that will divide the artist searched,
+related artist, ticket, and venue  */
+.column-1 {
+  background-color: #aaa;
+  float: left;
+  width: 50%;
+  padding: 10px;
+  min-height: 300px;
+}
 
-  .column-3 {
-    background-color: rgb(214, 209, 209);
-    float: left;
-    width: 50%;
-    padding: 10px;
-    height: 300px;
-  } 
+.column-2 {
+  background-color: rgb(214, 209, 209);
+  float: left;
+  width: 50%;
+  padding: 10px;
+  min-height: 300px;
+} 
 
-  .column-4 {
-    background-color: #aaa;
-    float: left;
-    width: 50%;
-    padding: 10px;
-    height: 300px;
-  } 
-  
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+.column-3 {
+  background-color: rgb(214, 209, 209);
+  float: left;
+  width: 50%;
+  padding: 10px;
+  min-height: 300px;
+} 
+
+.column-4 {
+  background-color: #aaa;
+  float: left;
+  width: 50%;
+  padding: 10px;
+  min-height: 300px;
+} 
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
 #vid-container {
-  overflow: hidden;
-  height: 400px;
-  background: black;
-  position: relative;
+overflow: hidden;
+height: 400px;
+background: black;
+position: relative;
 }
 
 video {
-  position: absolute;
-  
-  /* Vertical and Horizontal center*/
-  left: 50%; top: 50%;
-  transform: translate(-50%, -50%);
+position: absolute;
+
+/* Vertical and Horizontal center*/
+left: 50%; top: 50%;
+transform: translate(-50%, -50%);
 }
 
 #overlay {
-  position: absolute;
-  top: 0; right: 0; left: 0; bottom: 0;
-  padding-top: 0px;
-  z-index: 1;
-  
-  background: rgba(0,0,0,0.5);
+position: absolute;
+top: 0; right: 0; left: 0; bottom: 0;
+padding-top: 0px;
+z-index: 1;
+
+background: rgba(0,0,0,0.5);
 }
 
 
 form {
-  margin-top: 50px;
+margin-top: 50px;
 }
 
 .favart {
-  padding: 0px 10px 0px 10px;
+padding: 0px 10px 0px 10px;
 }
 
 #logo {
-  z-index: 10;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 20%;
+z-index: 10;
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 20%;
 }
 
