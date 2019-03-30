@@ -74,14 +74,23 @@ related artist, ticket, and venue  */
   width: 50%;
   background-color: rgb(214, 209, 209);
   min-height: 450px;
-  
 } 
+
+#b1 .img {
+  height: 300px;
+  width: auto;
+}
 
 #b2{
   width: 50%;
   background-color: #aaa;
   min-height: 300px;
 } 
+
+.favartists {
+  color: blue;
+  font-size: 30px;
+}
 
 /* Clear floats after the columns */
 .row:after {
@@ -151,6 +160,6 @@ width: 375px;
   width: 100%;
 }
 
-img {
+#a img {
   width: 100%;
 }

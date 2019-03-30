@@ -37,7 +37,7 @@ $("#submit").on("click", function(event) {
       var artname = data[i].name;
       relatedArtists.push(data[i].name)
       var artlink = data[i].url;
-      var artimag = Object.values(data[i].image[1]);
+      var artimag = Object.values(data[i].image[5]);
      
       var artDiv = $("<div class = 'relart'>");
       var imgDiv = $('<img>');
