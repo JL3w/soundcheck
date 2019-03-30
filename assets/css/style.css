@@ -58,8 +58,9 @@ input[type=text]:focus {
 related artist, ticket, and venue  */
 #a {
   width: 50%;
-  background-color: #aaa;
-  min-height: 750px;
+  background-color:rgb(119, 119, 119);
+  height: 750px;
+  overflow: scroll;
 }
 
 #b {
@@ -72,7 +73,6 @@ related artist, ticket, and venue  */
   width: 50%;
   background-color: rgb(214, 209, 209);
   min-height: 450px;
-  
 } 
 
 #b2{
@@ -129,3 +129,48 @@ margin-right: auto;
 width: 375px;
 }
 
+.art-box {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column: 1/ span 12;
+  margin: 30px;
+}
+
+.art-info {
+  background: white;
+  padding: 10px 10px 10px;
+  grid-column: 1 /span 4;
+  grid-row: 2 /span 1;
+}
+
+.relart {
+  grid-column: 2 /span 9;
+  grid-row: 1 /span 3;
+  width: 100%;
+}
+
+img {
+  width: 100%;
+}
+
+.footer {
+  width: 100%;
+  position: static;
+  text-align: center;
+  color: gray;
+  padding-top: 5px;
+}
+
+body {
+  background: black;
+}
+
+.related-head {
+  text-align: center;
+  margin-top: 15px;
+}
+
+#favorites {
+  text-align: center;
+  margin: 10px;
+}
