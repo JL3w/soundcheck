@@ -42,18 +42,22 @@ $("#submit").on("click", function(event) {
 
       var artDiv = $("<div class = 'relart'>");
       var nameDiv = $("<button>").text(artname);
-      var favDiv = $("<button>").text("+Fav");
-      favDiv.attr("data-name", data[i].name);
-      favDiv.addClass("favartists");
+
+      var plusSpan = $("<span>").text("Fav")
+      plusSpan.attr("data-name", data[i].name);
+      plusSpan.addClass("fas fa-plus");
+      plusSpan.addClass("favartist");
+
       nameDiv.attr("data-name", data[i].name);
       nameDiv.addClass("artists");
       artDiv.append(nameDiv);
-      artDiv.append(favDiv);
+      artDiv.append(plusSpan);
 
+    
       
      // var link = $("<a>").text("Link").attr("href", artlink);
      // artDiv.append(link);
-      $("#1").prepend(artDiv);
+      $("#a").prepend(artDiv);
     };
     
     
@@ -67,7 +71,7 @@ $("#submit").on("click", function(event) {
   });
 var favartistarray = [];
 
-$(document).on("click", ".favartists", function(event) {
+$(document).on("click", ".favartist", function(event) {
 
   event.preventDefault();
   var artist3 = $(this).attr("data-name");
@@ -80,7 +84,7 @@ $(document).on("click", ".favartists", function(event) {
   favnameDiv.attr("data-name", artist3);
   favnameDiv.addClass("favartists");
   favDiv.append(favnameDiv);
-  $("#4").prepend(favDiv);
+  $("#b2").prepend(favDiv);
 });
 
 $(document).on("click", ".artists", function(event) {
@@ -97,11 +101,12 @@ $(document).on("click", ".artists", function(event) {
     var artistImage = $("<img>").attr("src", response.thumb_url);
     var trackerCount = $("<h4>").text(response.tracker_count + " fans tracking this artist");
     var upcomingEvents = $("<h2>").text(response.upcoming_event_count + " upcoming events");
-    var goToArtist = $("<a>").attr("href", response.url).text("See Tour Dates").attr('target', '_blank');
- 
-    $("#2").empty();
-    $("#4").empty();
-    $("#2").append(artistURL, artistImage, trackerCount, upcomingEvents, goToArtist);
+
+    var goToArtist = $("<a>").attr("href", response.url).text("See Tour Dates");
+
+    $("#b1").empty();
+   // $("#").empty();
+    $("#b1").append(artistURL, artistImage, trackerCount, upcomingEvents, goToArtist);
    
   });
 });
