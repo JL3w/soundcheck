@@ -32,6 +32,11 @@ $("#submit").on("click", function(event) {
     url: queryURL,
     method: "GET"
     }).then(function(response) {
+      if (response.error) {
+        console.log(response.message);
+        $(headline).text(response.message).css({"color": "rgba(223, 13, 13, 0.877)", "text-shadow": "1px 1px black"});
+        return;
+      }
     var data = response.similarartists.artist
     console.log(response)
     for (i =0; i < data.length; i++) {
