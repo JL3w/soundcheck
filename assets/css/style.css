@@ -75,11 +75,21 @@ related artist, ticket, and venue  */
   min-height: 450px;
 } 
 
+#b1 .img {
+  height: 300px;
+  width: auto;
+}
+
 #b2{
   width: 50%;
   background-color: #aaa;
   min-height: 300px;
 } 
+
+.favartists {
+  color: blue;
+  font-size: 30px;
+}
 
 /* Clear floats after the columns */
 .row:after {
@@ -121,6 +131,11 @@ margin-top: 50px;
 padding: 0px 10px 0px 10px;
 }
 
+.favartists {
+  color: whitesmoke;
+  font-size: 20px;
+}
+
 #logo {
 z-index: 10;
 display: block;
@@ -149,7 +164,7 @@ width: 375px;
   width: 100%;
 }
 
-img {
+#a img {
   width: 100%;
 }
 
@@ -168,9 +183,17 @@ body {
 .related-head {
   text-align: center;
   margin-top: 15px;
+  color: white;
 }
 
 #favorites {
   text-align: center;
   margin: 10px;
+  color: white;
+  text-decoration: underline;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden; 
 }
