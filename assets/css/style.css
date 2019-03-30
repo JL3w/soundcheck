@@ -132,8 +132,8 @@ padding: 0px 10px 0px 10px;
 }
 
 .favartists {
-  color: blue;
-  font-size: 30px;
+  color: whitesmoke;
+  font-size: 20px;
 }
 
 #logo {
@@ -183,9 +183,17 @@ body {
 .related-head {
   text-align: center;
   margin-top: 15px;
+  color: white;
 }
 
 #favorites {
   text-align: center;
   margin: 10px;
+  color: white;
+  text-decoration: underline;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden; 
 }
