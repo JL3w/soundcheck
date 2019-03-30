@@ -42,10 +42,12 @@ $("#submit").on("click", function(event) {
 
       var artDiv = $("<div class = 'relart'>");
       var nameDiv = $("<button>").text(artname);
+
       var plusSpan = $("<span>").text("Fav")
       plusSpan.attr("data-name", data[i].name);
       plusSpan.addClass("fas fa-plus");
       plusSpan.addClass("favartist");
+
       nameDiv.attr("data-name", data[i].name);
       nameDiv.addClass("artists");
       artDiv.append(nameDiv);
@@ -95,10 +97,11 @@ $(document).on("click", ".artists", function(event) {
   }).then(function(response) {
     console.log(response);
     var artistName = $("<h2>").text(response.name);
-    var artistURL = $("<a>").attr("href", response.url).append(artistName);
+    var artistURL = $("<a>").attr("href", response.url).append(artistName).attr('target', '_blank');
     var artistImage = $("<img>").attr("src", response.thumb_url);
     var trackerCount = $("<h4>").text(response.tracker_count + " fans tracking this artist");
     var upcomingEvents = $("<h2>").text(response.upcoming_event_count + " upcoming events");
+
     var goToArtist = $("<a>").attr("href", response.url).text("See Tour Dates");
 
     $("#b1").empty();
@@ -107,7 +110,6 @@ $(document).on("click", ".artists", function(event) {
    
   });
 });
-
 
 
 
