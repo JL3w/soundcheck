@@ -88,9 +88,6 @@ $("#submit").on("click", function(event) {
           triggerHook: 0.8
         })
         .setTween(tween)
-        .addIndicators({
-          parent: "#a"
-        })
         .addTo(controller);
       });
     
