@@ -58,9 +58,8 @@ input[type=text]:focus {
 related artist, ticket, and venue  */
 #a {
   width: 50%;
-  background-color: #aaa;
-  min-height: 750px;
-  max-height: 750px;
+  background-color:rgb(119, 119, 119);
+  height: 750px;
   overflow: scroll;
 }
 
@@ -132,6 +131,11 @@ margin-top: 50px;
 padding: 0px 10px 0px 10px;
 }
 
+.favartists {
+  color: blue;
+  font-size: 30px;
+}
+
 #logo {
 z-index: 10;
 display: block;
@@ -162,4 +166,26 @@ width: 375px;
 
 #a img {
   width: 100%;
+}
+
+.footer {
+  width: 100%;
+  position: static;
+  text-align: center;
+  color: gray;
+  padding-top: 5px;
+}
+
+body {
+  background: black;
+}
+
+.related-head {
+  text-align: center;
+  margin-top: 15px;
+}
+
+#favorites {
+  text-align: center;
+  margin: 10px;
 }
