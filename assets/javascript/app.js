@@ -18,11 +18,15 @@ var relatedArtists = [];
 
 //call last.fm API
 $("#submit").on("click", function(event) {
+  $("#a").empty();
   event.preventDefault();
   var artist = $("#input-form").val().trim();
   function displayrelart() {
 
   var queryURL = "https://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&artist=" + artist + "&limit=10&api_key=424ba3add1c40d8f176064e658978ecb&format=json";
+
+  var headline = $("<h3 class = 'related-head'>").text("Similar Artists");
+  $("#a").append(headline);
 
   $.ajax({
     url: queryURL,
@@ -37,7 +41,7 @@ $("#submit").on("click", function(event) {
       var artname = data[i].name;
       relatedArtists.push(data[i].name)
       var artlink = data[i].url;
-      var artimag = Object.values(data[i].image[1]);
+      var artimag = Object.values(data[i].image[5]);
      
       var artDiv = $("<div class = 'relart'>");
       var imgDiv = $('<img>');
@@ -60,9 +64,11 @@ $("#submit").on("click", function(event) {
       artBox.append(artDiv);
       artBox.append(infoDiv);
 
+   
+
      // var link = $("<a>").text("Link").attr("href", artlink);
      // artDiv.append(link);
-      $("#a").append(artBox);
+     $("#a").append(artBox);
     };
 
     var controller = new ScrollMagic.Controller({
@@ -110,7 +116,7 @@ $(document).on("click", ".favartist", function(event) {
   favnameDiv.attr("data-name", artist3);
   favnameDiv.addClass("favartists");
   favDiv.append(favnameDiv);
-  $("#b2").prepend(favDiv);
+  $("#b2").append(favDiv);
 });
 
 $(document).on("click", ".artists", function(event) {
@@ -123,11 +129,11 @@ $(document).on("click", ".artists", function(event) {
   }).then(function(response) {
     console.log(response);
     var artistName = $("<h2>").text(response.name);
-    var artistURL = $("<a>").attr("href", response.url).append(artistName);
+    var artistURL = $("<a>").attr("href", response.url).append(artistName).attr("target", "_blank");
     var artistImage = $("<img>").attr("src", response.thumb_url);
     var trackerCount = $("<h4>").text(response.tracker_count + " fans tracking this artist");
     var upcomingEvents = $("<h2>").text(response.upcoming_event_count + " upcoming events");
-    var goToArtist = $("<a>").attr("href", response.url).text("See Tour Dates");
+    var goToArtist = $("<a>").attr("href", response.url).text("See Tour Dates").attr("target", "_blank");
 
     $("#b1").empty();
    // $("#").empty();
