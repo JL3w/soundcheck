@@ -61,6 +61,7 @@ related artist, ticket, and venue  */
   background-color:rgb(119, 119, 119);
   height: 750px;
   overflow: scroll;
+  
 }
 
 #b {
@@ -193,7 +194,7 @@ body {
   text-decoration: underline;
 }
 
-html, body {
+html, body, #a {
   max-width: 100%;
   overflow-x: hidden; 
 }
