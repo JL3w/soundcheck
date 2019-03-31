@@ -106,6 +106,7 @@ form {
   background-color:rgb(119, 119, 119);
   height: 750px;
   overflow: scroll;
+  overflow-x: hidden;
 }
 
 /* Styling for the "Learn More" container */
