@@ -1,4 +1,6 @@
-// //initialize firebase
+
+$(document).ready(function() {
+  // //initialize firebase
 var config = {
   apiKey: "AIzaSyBu8rTbNifHBZ0s0KA_5o7HDfIJTQ1pE7o",
   authDomain: "soundcheck-3312a.firebaseapp.com",
@@ -12,8 +14,27 @@ firebase.initializeApp(config);
 
 //set global variables
 var database = firebase.database();
-
 var relatedArtists = [];
+var favartistarray =  [];
+var getuid = function() {
+
+  var nav = window.navigator;
+  var screen = window.screen;
+  var uid = nav.mimeTypes.length;
+  uid += nav.userAgent.replace(/\D+/g, '');
+  uid += nav.plugins.length;
+  uid += screen.height || '';
+  uid += screen.width || '';
+  uid += screen.pixelDepth || '';
+
+  return uid;
+  
+};
+var usersid = getuid();
+var userRef = database.ref('users/' + usersid)
+
+
+
 //event to grab the input from search bar and clear (needs to change if we dont use a button)
 
 //call last.fm API
@@ -101,16 +122,22 @@ $("#submit").on("click", function(event) {
   displayrelart();
   $("#form")[0].reset();
   });
-var favartistarray = [];
+
 
 $(document).on("click", ".favartist", function(event) {
-
   event.preventDefault();
   var artist3 = $(this).attr("data-name");
-  var favaristobj = {
-    favartist: artist3
-  };
-  database.ref().push(favaristobj);
+  favartistarray.push(artist3);
+  console.log(favartistarray);
+  function writeUserData() {
+    userRef.set({
+      favartists: favartistarray
+    });
+  }  
+  writeUserData();
+ // userRef.on('child_changed', function(snapshot) {
+ //   var sv = snapshot.val();
+//  })
   var favDiv = $("<div class = 'favart'>");
   var favnameDiv = $("<p>").text(artist3);
   favnameDiv.attr("data-name", artist3);
@@ -140,7 +167,7 @@ $(document).on("click", ".artists", function(event) {
    
   });
 });
-
+});
 
 
 
