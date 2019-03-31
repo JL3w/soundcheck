@@ -1,3 +1,5 @@
+/* ====== Section to display jumbotron and container for background ====== */
+
 /* Added "fluid" to stretch the header 
 across the width of browser */
 .container-fluid {
@@ -7,7 +9,7 @@ across the width of browser */
 }
 
 /* Shows the title of the page.
-Added fade properties to blend jumbotron to bg-image */
+Fade properties to blend jumbotron to bg-image */
 .jumbotron {
   margin-bottom: 10px;
   padding-bottom: 10px;
@@ -16,15 +18,47 @@ Added fade properties to blend jumbotron to bg-image */
   background: rgba(0, 0, 0, 0);
   color: #f1f1f1;
 }
-/*  removes the submit button from the page by making it transparent*/
-#submit {
-background: transparent;
-border: none;
-z-index: -1;
+
+/* Dimensions used to position the jumbotron */
+#overlay {
+  position: absolute;
+  top: 0; right: 0; left: 0; bottom: 0;
+  padding-top: 0px;
+  z-index: 1;
+  background: rgba(0,0,0,0.5);
 }
-/* Font-size for the title */
-h1 {
-  font-size: 50px;
+/* ====== Section that contains video and logo properties/values ======== */
+
+/* Container to display bg-video */
+#vid-container {
+  overflow: hidden;
+  height: 380px;
+  background: black;
+  position: relative;
+}
+
+/* Position of the video */
+video {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+}
+/* Position of the logo in the jumbotron */
+#logo {
+  z-index: 10;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 375px;
+}
+/* ====== Section that contains the search bar and functionality ========== */
+
+/* Removes the submit button from 
+the page by making it transparent*/
+#submit {
+  background: transparent;
+  border: none;
+  z-index: -1;
 }
 
 /* Search bar to search for artist(s) */
@@ -50,12 +84,23 @@ input[type=text]:focus {
   width: 25%;
 }
 
+/* Adjust search bar margins */
+form {
+  margin-top: 50px;
+}
+
 * {
   box-sizing: border-box;
 }
+/* ====== Section that contains column "a" and response data ================= */
 
-/* Columns that will divide the artist searched,
-related artist, ticket, and venue  */
+/* Display related artist title */
+.related-head {
+  text-align: center;
+  margin-top: 15px;
+  color: white;
+}
+/* Dimensions of the scroll for column "a" */
 #a {
   width: 50%;
   background-color:rgb(119, 119, 119);
@@ -63,6 +108,37 @@ related artist, ticket, and venue  */
   overflow: scroll;
 }
 
+/* Styling for the "Learn More" container */
+.art-box {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column: 1/ span 12;
+  margin: 30px;
+}
+.art-info {
+  background: lightgray;
+  opacity: .7;
+  color: black;
+  padding: 10px 10px 10px;
+  grid-column: 1 /span 4;
+  grid-row: 2 /span 1;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 25px 0 rgba(0, 0, 0, 0.19);
+}
+.relart {
+  grid-column: 2 /span 9;
+  grid-row: 1 /span 3;
+  width: 100%;
+}
+#a img {
+  width: 100%;
+}
+
+
+
+/* ====== Section that contains column "b" and response data ================== */
+
+/* Column b properties to contain "Learn More"
+info and favorite artist divs */
 #b {
   width: 50%;
   background-color: rgb(214, 209, 209);
@@ -86,92 +162,33 @@ related artist, ticket, and venue  */
   min-height: 300px;
 } 
 
+/* Properties to style favorite 
+related artist(s) in div "b2" */
 .favartists {
   color: blue;
   font-size: 30px;
 }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-#vid-container {
-overflow: hidden;
-height: 380px;
-background: black;
-position: relative;
-}
-
-video {
-position: absolute;
-
-/* Vertical and Horizontal center*/
-left: 50%; top: 50%;
-transform: translate(-50%, -50%);
-}
-
-#overlay {
-position: absolute;
-top: 0; right: 0; left: 0; bottom: 0;
-padding-top: 0px;
-z-index: 1;
-
-background: rgba(0,0,0,0.5);
-}
-
-
-form {
-margin-top: 50px;
-}
-
+/* To display favorite artist list */
 .favart {
-padding: 0px 10px 0px 10px;
+  padding: 0px 10px 0px 10px;
 }
 
+/* Sub title of the fav-artist section 
+and its styling properties*/
 .favartists {
   color: whitesmoke;
-  font-size: 20px;
+  font-size: 15px;
 }
-
-#logo {
-z-index: 10;
-display: block;
-margin-left: auto;
-margin-right: auto;
-width: 375px;
+#favorites {
+  text-align: center;
+  margin: 10px;
+  color: white;
+  text-decoration: underline;
 }
+/* ====== Section that contains footer, body and html clean ups ================== */
 
-.art-box {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-column: 1/ span 12;
-  margin: 30px;
-}
-
-.art-info {
-  background: lightgray;
-  opacity: .7;
-  color: black;
-  padding: 10px 10px 10px;
-  grid-column: 1 /span 4;
-  grid-row: 2 /span 1;
-  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 25px 0 rgba(0, 0, 0, 0.19);
-}
-
-
-.relart {
-  grid-column: 2 /span 9;
-  grid-row: 1 /span 3;
-  width: 100%;
-}
-
-#a img {
-  width: 100%;
-}
-
+/* Footer to display our company name */
 .footer {
   width: 100%;
   position: static;
@@ -180,24 +197,20 @@ width: 375px;
   padding-top: 5px;
 }
 
+/* Set bg-color to black */
 body {
   background: black;
 }
 
-.related-head {
-  text-align: center;
-  margin-top: 15px;
-  color: white;
-}
-
-#favorites {
-  text-align: center;
-  margin: 10px;
-  color: white;
-  text-decoration: underline;
-}
-
-html, body {
+/* To remove hor. scroll */
+html, body, #a {
   max-width: 100%;
   overflow-x: hidden; 
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }

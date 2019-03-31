@@ -10,11 +10,11 @@ var config = {
 
 firebase.initializeApp(config);
 
-//set global variables
+//Variable used to add data from user input back to firebase databse
 var database = firebase.database();
 
-var relatedArtists = [];
 //event to grab the input from search bar and clear (needs to change if we dont use a button)
+var relatedArtists = [];
 
 //call last.fm API
 $("#submit").on("click", function(event) {
@@ -28,26 +28,24 @@ $("#submit").on("click", function(event) {
   var headline = $("<h3 class = 'related-head'>").text("Similar Artists");
   $("#a").append(headline);
 
+  // Ajax call to return a promise
   $.ajax({
     url: queryURL,
     method: "GET"
     }).then(function(response) {
       if (response.error) {
-        console.log(response.message);
         $(headline).text(response.message).css({"color": "rgba(223, 13, 13, 0.877)", "text-shadow": "1px 1px black"});
         return;
       }
     var data = response.similarartists.artist
-    console.log(response)
     for (i =0; i < data.length; i++) {
-      console.log(data[i].name);
-      console.log(data[i].url);
-      console.log(data[i].image[1]);
       var artname = data[i].name;
       relatedArtists.push(data[i].name)
       var artlink = data[i].url;
       var artimag = Object.values(data[i].image[5]);
      
+      // Variables used to create an element node and append info
+      // to display artist image and link to "Learn More"
       var artDiv = $("<div class = 'relart'>");
       var imgDiv = $('<img>');
       imgDiv.attr('src', artimag);
@@ -69,13 +67,11 @@ $("#submit").on("click", function(event) {
       artBox.append(artDiv);
       artBox.append(infoDiv);
 
-   
 
-     // var link = $("<a>").text("Link").attr("href", artlink);
-     // artDiv.append(link);
      $("#a").append(artBox);
     };
 
+    // Scroll/function used to scroll through related artist in left column
     var controller = new ScrollMagic.Controller({
       container: "#a"
       });
@@ -105,6 +101,7 @@ $("#submit").on("click", function(event) {
   });
 var favartistarray = [];
 
+// Function used to add related artist(s) to favorite section
 $(document).on("click", ".favartist", function(event) {
 
   event.preventDefault();
@@ -121,6 +118,8 @@ $(document).on("click", ".favartist", function(event) {
   $("#b2").append(favDiv);
 });
 
+// Function used to retrieve API response from Bands in Town and Last FM
+// These API calls are used to add href's that link to the artist page and tour dates
 $(document).on("click", ".artists", function(event) {
   event.preventDefault();
   var artist2 = $(this).attr("data-name");
@@ -129,7 +128,6 @@ $(document).on("click", ".artists", function(event) {
     url: queryURL,
     method: "GET"
   }).then(function(response) {
-    console.log(response);
     var artistName = $("<h2>").text(response.name);
     var artistURL = $("<a>").attr("href", 'https://www.last.fm/music/' + response.name).append(artistName).attr("target", "_blank");    var artistImage = $("<img>").attr("src", response.thumb_url);
     var trackerCount = $("<h4>").text(response.tracker_count + " fans tracking this artist");
@@ -137,7 +135,6 @@ $(document).on("click", ".artists", function(event) {
     var goToArtist = $("<a>").attr("href", response.url).text("See Tour Dates").attr("target", "_blank");
 
     $("#b1").empty();
-   // $("#").empty();
     $("#b1").append(artistURL, artistImage, trackerCount, upcomingEvents, goToArtist);
    
   });
