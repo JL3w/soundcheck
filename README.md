@@ -37,3 +37,4 @@ https://jl3w.github.io/soundcheck/
 * **Andrew Hennesen**  
 * **Paul Nelson** 
 * **Joshua Lewis** 
+* **LeShwan Edouard**
