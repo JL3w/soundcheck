@@ -2,10 +2,6 @@
 
 SoundCheck is a webapp designed to users discover concerts for music that they like that they may not know about that is happening near them.  Sound Check can also be used by bands and promoters to try and help get themselfs out there and show their music new fans that they might not otherwise reach.
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
 
 ## Running tests
 
@@ -38,3 +34,5 @@ https://jl3w.github.io/soundcheck/
 * **Paul Nelson** 
 * **Joshua Lewis** 
 * **LeShwan Edouard**
+
+* Soundcheck was created as the very first group project for my coding bootcamp. One of the biggest challenges was simultaniously learning to collaborate, define and scope the project, and deploy to production on a short time frame. Developing a workflow for scrum, branching, and code review was essential to overcoming this obstacle. 
